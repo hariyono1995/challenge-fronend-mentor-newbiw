@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" href="images/favicon-32x32.png" size="32x32" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css?family=Outfit:400,700" rel="stylesheet" />
+  
+  <title>Frontend Mentor | QR code component</title>
+
+  <style>
+    :root {
+      --white: hsl(0, 0%, 100%);
+      --lightGray: hsl(212, 45%, 89%);
+      --grayishBlue: hsl(220, 15%, 55%);
+      --darkBlue: hsl(218, 44%, 22%)
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+
+      background: var(--lightGray);
+    }
+
+    .code {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .code-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      
+      width: 350px;
+      height: fit-content;
+      padding: 20px;
+      background: var(--white);
+      border-radius: 20px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .code-info {
+      text-align: center;
+    }
+
+    h2, p {
+      margin: 20px auto; 
+      width: 90%;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--darkBlue);
+    }
+
+    p {
+      color: var(--grayishBlue);
+      letter-spacing: 1px;
+      line-height: 20px;
+    }
+   
+    @media screen and (max-width: 375px) {
+      .code-container {
+        width: 300px;
+
+        gap: 10px;
+      }
+
+      h2, p {
+        width: 100%;
+      }
+
+      h2 {
+        margin: 0;
+      }
+      
+      p {
+        font-size: 14.5px;
+        margin: 15px 0;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="code">
+  <div class="code-container">
+    <img src="images/image-qr-code.png" alt="qr code" />
+
+    <div class="code-info">
+      <h2>Improve your front-end skills by building projects</h2>
+
+      <p>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level </p>
+    </div>
+  </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Overpass:400,700" rel="stylesheet" />
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <style>
+   :root {
+    --primaryOrange: hsl(25, 97%, 53%);
+
+    --neutralWhite: hsl(0, 0%, 100%);
+    --neutralLightGrey:  hsl(217, 12%, 63%);
+    --neutralMediumGrey: hsl(216, 12%, 54%)
+    ;
+    --neutralDarkBlue: hsl(213, 19%, 18%);
+    --neutralVeryDarkBlue: hsl(216, 12%, 8%);
+
+    --bg-opacity:  rgba(88, 86, 86, 0.3);
+   }
+
+   * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    color: var(--neutralWhite);
+    font-family: 'Overpass', sans-serif;
+    
+    background: var(--neutralVeryDarkBlue);
+
+  }
+
+  p {
+    color: var(--neutralMediumGrey);
+  }
+
+  .card-rating {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rating-container {
+    width: 350px;
+    height: fit-content;
+
+    background: var(--neutralDarkBlue);
+    padding: 20px;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 17px;
+  }
+
+  .icon-star img{
+    padding: 15px;
+    background: rgba(88, 86, 86, 0.3);
+    border-radius: 50%;
+    backdrop-filter: 4px;
+  }
+
+  h2.rating-question {
+    font-weight: 400;
+  }
+
+  p.intruction {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .rating-rate {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+
+    color: var(--neutralMediumGrey);
+
+    margin-bottom: 10px;
+  }
+
+  .rating-rate label {
+    padding: 14px 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    background: var(--bg-opacity);
+
+    font-size: 14px;
+
+    cursor: pointer;
+    transition: .3s ease-in-out;
+  }
+
+  .rating-rate div:hover{
+    color: var(--neutralWhite);
+    background: var(--neutralMediumGrey);
+    transition: .3s ease-in-out;
+  }
+
+  .active {
+    background: var(--primaryOrange)!important;
+    color: var(--neutralWhite);
+  }
+
+  button {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    outline: 0;
+    border-radius: 20px;
+    background: var(--primaryOrange);
+
+    color: var(--neutralWhite);
+    font-weight: 400;
+
+    cursor: pointer;
+    transition: .3s ease-in-out;
+  }
+
+  button:hover {
+    background:var(--neutralWhite);
+    color: var(--primaryOrange);
+  }
+
+  @media screen and (max-width: 375px) {
+    .rating-container {
+      width: 300px;
+      gap: 10px;
+    }
+
+    .icon-star img {
+      padding: 10px;
+    }
+
+    h2.rating-question {
+      font-size: 1.2rem;
+    }
+
+    p.intruction {
+      font-size: 14px;
+    }
+
+    .rating-rate div {
+      padding: 9px 13px;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 8px;
+      font-size: 14px;
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <!-- Rating state start -->
+
+  How did we do?
+
+  Please let us know how we did with your support request. All feedback is appreciated 
+  to help us improve our offering!
+
+  1 2 3 4 5
+
+  Submit
+
+  <!-- Rating state end -->
+
+  <!-- Thank you state start -->
+
+  You selected <!-- Add rating here --> out of 5
+
+  Thank you!
+
+  We appreciate you taking the time to give a rating. If you ever need more support, 
+  don’t hesitate to get in touch!
+
+  <!-- Thank you state end -->
+
+  
+  <section class="card-rating">
+    <div class="rating-container">
+      <div class="icon-star">
+        <img src="images/icon-star.svg" alt="icon star">
+      </div>
+
+      <h2 class="rating-question">
+        How did we do?
+      </h2>
+      <p class="intruction">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+
+      <form class="rating-rate">
+        <input type="radio" id="1" /> <label for="1">1</label>
+        <input type="radio" id="2" /> <label for="2">2</label>
+        <input type="radio" id="3" /> <label for="3">3</label>
+        <input type="radio"  class='active' id="4" /> <label for="4">4</label>
+        <input type="radio" id="5" /> <label for="5">5</label>
+      </form>
+
+      <button id="submit">Submit</button>
+    </div>
+  </section>
+
+  <script>
+    const btnSubmit = document.querySelector('#submit');
+    const ids = document.querySelectorAll('.rating-rate div');
+
+    let userRating = null;
+
+    ids.forEach(idRating => {
+
+     idRating.classList.remove('active');
+
+    //  if(!idRating.classList.contains('active')) {
+      idRating.addEventListener('click', (event) => {
+        userRating = idRating.id;
+
+        if (userRating === null) {
+          idRating.classList.remove('active')
+        }
+        if (userRating !== null) {
+          idRating.id  === userRating;
+           idRating.classList.add('active') 
+        }
+
+
+
+    
+
+      btnSubmit.innerHTML = userRating;
+     })  
+    //  }
+    
+    })
+    
+
+    // btnSubmit.addEventListener('click', () => {
+    // console.log(ids)})
+  </script>
+</body>
+</html>

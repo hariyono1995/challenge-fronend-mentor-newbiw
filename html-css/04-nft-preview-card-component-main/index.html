@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <link href="https://fonts.googleapis.com/css?family=Outfit:300,400,600" rel="stylesheet" />
+
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+   :root {
+    --mainBG : hsl(217, 54%, 11%);
+    --cardBG:  hsl(216, 50%, 16%);
+    --line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+
+   --softBlue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%)
+   }
+
+   *, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;   
+  }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    color: var(--white);
+  }
+
+  .nft {
+    height: 100vh;
+    width: 100vw;
+
+    background: var(--mainBG);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nft-container {
+    width: 230px;
+    height: fit-content;
+    
+    padding: 22px;
+    background: var(--cardBG);
+    border-radius: 20px;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nft-image {
+    position: relative;
+  }
+
+  .nft-image img{
+    width: 100%;
+    height: 220px;
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: .3s ease-in-out;
+  }
+
+  .nft-image:hover .overlay{
+    opacity: 1;
+  }
+
+  .overlay {
+    width: 230px;
+    height: 220px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 8;
+    opacity: 0;
+    transition: .3s ease-in-out;
+
+    background-color: rgba(21, 204, 236, 0.5);
+    border-radius: 10px;    
+  }
+
+  .overlay img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .description h3 {
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+  }
+
+  .description h3:hover {
+    color: var(--cyan);
+  }
+  .description p, .author p {
+    color: var(--softBlue);
+    opacity: 0.8;
+    font-size: 14px;
+    line-height: 25px;
+
+    margin-bottom: 10px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+    font-size: 16px;
+    
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+
+    position: relative;
+  }
+
+  .ethereum {
+    color: var(--cyan);
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .ethereum::before {
+    content: url('images/icon-ethereum.svg');
+    margin-right: 7px;
+  }
+
+  .time-left {
+    color: var(--softBlue);
+    opacity: 0.8;
+
+    margin-top: 2px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .time-left::before {
+    content: url('images/icon-clock.svg');
+    margin-right: 7px;
+    margin-top: 2px;
+  }
+
+  .author {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .author-avatar {
+    width: 50px;
+    height: 50px;
+    outline: 1px solid var(--white);
+    border-radius: 50%;
+    overflow: hidden;
+
+  }
+  .author-avatar img{
+    width: 50px;
+    height: 50px;
+  }
+
+  .author span {
+    color: var(--white);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+  }
+
+  .author span:hover {
+    color: var(--cyan);
+  }
+
+  </style>
+</head>
+<body>
+
+  <!-- Equilibrium #3429
+
+  Our Equilibrium collection promotes balance and calm.
+
+  0.041 ETH
+  3 days left
+  
+  Creation of Jules Wyvern -->
+
+  <div class="nft">
+   <div class="nft-container">
+    <div class="nft-image">
+      <img src="images/image-equilibrium.jpg" alt="image equilibrium">
+
+      <div class="overlay">
+        <img src="images/icon-view.svg" alt="view hover">
+      </div>
+    </div>
+
+    <div class="description">
+      <h3>Equilibrium #3429</h3>
+      <p>Our Equilibrium collection promotes balance and calm.</p>
+
+      <div class="info">
+        <span class="ethereum">0.041ETH</span>
+        <span class="time-left">3 days left</span>
+      </div>
+
+
+    </div>
+    <div class="author">
+      <div class="author-avatar">
+        <img src="images/image-avatar.png" alt="avatar author">
+      </div>
+
+      <p>Creation of <span>Jules Wyvern</span></p>
+    </div>
+
+   </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display:500,700,900" rel="stylesheet" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Order summary card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root {
+      --primaryBlue:  hsl(225, 100%, 94%);
+      --brightBlue: hsl(245, 75%, 52%);
+
+      --veryPaleBlue: hsl(225, 100%, 98%);
+      --desaturedBlue: hsl(224, 23%, 55%);
+      --darkBlue: hsl(223, 47%, 23%);
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+
+      font-size: 16px;
+      font-family: 'Red Hat Display', sans-serif;
+      font-weight:500;
+
+    }
+
+    button {
+      outline: none;
+      border: none;
+      padding: 10px;
+      border-radius: 10px;
+      background: transparent;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      cursor: pointer;
+      transition: .3s ease-in-out;
+    }
+
+    .card {
+      width: 100vw;
+      height: 100vh;
+      
+      background: url('images/pattern-background-desktop.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-color: var(--primaryBlue);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-container {
+      width: 350px;
+      /* height: 700px; */
+      background: var(--veryPaleBlue);
+      border-radius: 20px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      overflow: hidden;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 40px;
+    }
+
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 20px;
+
+      text-align: center;
+
+      padding: 0 20px 20px;
+    }
+
+    .card-content h2 {
+      color: var(--darkBlue);
+      font-weight: 900;
+    }
+
+    .card-content p {
+      width: 90%;
+      margin: 0 auto;
+
+      color: var(--desaturedBlue);
+      font-size: 14px;
+      letter-spacing: .5px;
+      line-height: 23px;
+
+    }
+    .info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between; 
+      
+      padding: 10px 10px;
+      background: rgba(230, 230, 230, 0.296);
+      border-radius: 10px;
+      /* opacity: 0.6; */
+    }
+
+    .price {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .detail-price {
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .detail-price h4 {
+      color: var(--darkBlue); 
+      font-weight: 900;
+      
+      margin-bottom: 2px;
+
+    }
+
+    .detail-price span {
+      color: var(--desaturedBlue);
+      font-weight: 700;
+    }
+    .info a {
+      color: var(--brightBlue);
+      font-weight: 700;
+      justify-content: 14px;
+    }
+
+    .info a:hover {
+      opacity: 0.8;
+    }
+
+    .cta {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .cta-pay {
+      background-color: var(--brightBlue);
+      box-shadow: rgba(24, 14, 168, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+      color: var(--veryPaleBlue);
+    }
+
+    .cta-pay:hover {
+     opacity: .7;
+    }
+
+    .cta-cancelOrder {
+      color: var(--desaturedBlue);
+    }
+
+    .cta-cancelOrder:hover {
+      color: var(--darkBlue);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Order Summary
+
+  You can now listen to millions of songs, audiobooks, and podcasts on any 
+  device anywhere you like!
+
+  Annual Plan
+  $59.99/year
+
+  Change
+
+  Proceed to Payment
+  Cancel Order -->
+  
+  <section class="card">
+    <div class="card-container">
+      <img src="images/illustration-hero.svg" alt="illustration hero">
+
+      <div class="card-content">
+        <h2>Order Summary</h2>
+
+        <p>You can now lisen to millions of songs, audiobooks and podass on any device anywhere you like!</p>
+
+        <div class="info">
+          <div class="price">
+            <div class="price-music">
+              <img src="images/icon-music.svg"
+              alt="">
+            </div>
+
+             <div class="detail-price">
+              <h4>Annual Plan</h4>
+              <span>&dollar;59.99/year</span>
+             </div>
+
+            </div>
+            <a href="#">Change</a>
+        </div>
+
+        <div class="cta">
+          <button class="cta-pay">Proceed to Payment</button>
+
+          <button class="cta-cancelOrder">
+            Cancel Order
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</body>
+</html>

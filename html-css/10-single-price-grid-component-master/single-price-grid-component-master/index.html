@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet" />
+  
+  <title>Frontend Mentor | Single Price Grid Component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+   :root {
+    --cyan:  hsl(179, 62%, 43%);
+    --brightYellow: hsl(71, 73%, 54%);
+    --lightGray: hsl(204, 43%, 93%);
+    --grayishBlue: hsl(218, 22%, 67%);
+   }
+
+   * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+   }
+
+   body {
+    font-family: "Karla", sans-serif;
+    color: var(--lightGray);
+   }
+   h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+   }
+   p {
+    font-size: 16px;
+    line-height: 26px;
+    width: 90%;
+   }
+
+   span {
+    font-size: 16px;
+    opacity: 0.8;
+    font-weight: 400;
+   }
+   .mb-20 {
+    margin-bottom: 20px;
+   }
+
+   .mb-15 {
+    margin-bottom: 15px;
+   }
+   .mb-10 {
+    margin-bottom: 10px;
+   }
+
+   .card {
+    height: 100vh;
+    width: 100vw;
+    background: var(--lightGray);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .card-rows {
+    width: 700px;
+    height: fit-content;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; 
+    border-radius: 20px;
+    overflow: hidden;
+
+    display: grid;
+   grid-template-rows: 0.5fr 1fr;
+    /* gap: 30px; */
+    
+   }
+
+   .card-col1 {
+    padding: 50px 30px;
+    background: #fff;
+    
+  }
+
+   .card-col1 h2{
+    color: var(--cyan);
+   }
+
+   .card-col1 h3 {
+    color: var(--brightYellow);
+   }
+
+   .card-col1 p {
+    color: var(--grayishBlue);
+   }
+
+   .card-cols {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+   }
+
+   .card-col {
+    padding: 30px 50px;
+
+    display: flex;
+    flex-direction: column;
+   }
+
+   .bg-cyan {
+    background: var(--cyan);
+   }
+
+   .bg-cyan p {
+    width: 100%;
+   }
+
+   .bg-opacityCyan {
+    background: hsl(179, 62%, 43%, 0.7);
+    /* background: rgba(9, 243, 216, 0.519); */
+   }
+
+   .bg-opacityCyan p {
+    color: var(--lightGray);
+    line-height: 24px;
+    font-weight: 400;
+    width: 80%;
+    opacity: .7;
+   }
+
+   button {
+    margin-top: 20px;
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background: var(--brightYellow);
+
+    color: var(--lightGray);
+
+    cursor: pointer;
+   }
+
+   @media screen and (max-width: 500px) {
+    .card {
+      height: fit-content;
+      padding: 80px 0;
+    }
+    .card-rows {
+      grid-template-columns: 1fr;
+
+      width: 400px;
+      height:fit-content;
+    }
+    .card-col1 {
+      height: fit-content;
+    }
+    .card-cols {
+      grid-template-columns: 1fr;
+    }
+   }
+
+  </style>
+</head>
+<body>
+  <!-- Join our community
+
+  30-day, hassle-free money back guarantee
+
+  Gain access to our full library of tutorials along with expert code reviews. 
+  Perfect for any developers who are serious about honing their skills.
+
+  Monthly Subscription
+
+  &dollar;29 per month
+
+  Full access for less than &dollar;1 a day
+
+  Sign Up
+
+  Why Us
+
+  Tutorials by industry experts
+  Peer &amp; expert code review
+  Coding exercises
+  Access to our GitHub repos
+  Community forum
+  Flashcard decks
+  New videos every week -->
+
+  <section class="card">
+    <div class="card-rows">
+      <div class="card-col1">
+        <h2 class="mb-20">Join our community</h2>
+
+        <h3 class="mb-15">30-day,hassle-free money back guarantee</h3>
+      
+        <p>Gain access to our full library of tutorials along with expert code reviews. Perfect for any developers who are serious about honing their skills.</p>
+      </div>
+
+      <div class="card-cols">
+        <div class="card-col bg-cyan">
+          <h3 class="mb-15">Monthly Subscription</h3>
+
+          <h1 class="mb-10">&dollar;29 <span>per month</span></h1>
+
+          <p class="mb-10">Full access for less than &dollar;1 a day</p>
+
+          <button>Sign Up</button>
+        </div>
+        <div class="card-col bg-opacityCyan">
+          <h3 class="mb-15">Why Us</h3>
+
+          <p>Tutorials by industry experts Peer & expert code review Coding exercises. Access to our Github rapos Community forum flasheard decks New videos every week.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+</body>
+</html>

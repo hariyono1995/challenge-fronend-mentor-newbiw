@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <link href="https://fonts.googleapis.com/css?family=Kumbh+Sans:400,700" rel="stylesheet" />
+
+  <title>Frontend Mentor | Profile card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+   :root {
+    --darkGray: hsl(0, 0%, 59%);
+
+    --darkCyan: hsl(185, 75%, 39%);
+    --veryDarkDesaturatedBlue: hsl(229, 23%, 23%);
+    --darkGrayishBlue: hsl(227, 10%, 46%);
+   }
+
+   * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; 
+  }
+
+   body {
+    font-family: 'Kumbh Sans';
+    font-size: 18px;
+    font-weight: 400;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--darkCyan);
+
+   }
+
+    span {
+      color: var(--darkGray);
+      font-weight: 400;
+   }
+
+   h3 {
+    margin-bottom: 8px;
+   }
+
+   .card {
+    width: 100%;
+    height: 100%;
+    
+    /* background: url('images/bg-pattern-top.svg') left 0px top -12px no-repeat, url('images/bg-pattern-bottom.svg') left 0px top 0px repeat-y, url(bottom.png) left 0px bottom -12px no-repeat; */
+
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   }
+
+   .card-container {
+    display: flex;
+    flex-direction: column;
+    
+    width: 370px;
+    height: fit-content;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    overflow: hidden;
+
+    position: relative;
+   }
+
+   .card-banner {
+    height: 150px;
+    width: 100%;
+    background-image: url('images/bg-pattern-card.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+   }
+
+   .card-profile {
+    background-color: #fff;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+   }
+
+   .avatar {
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: -50px;
+    outline: 5px solid #fff;
+
+    object-fit: cover;
+  }
+
+   .avatar img {
+    border-radius: 43%;
+   }
+
+   .detail {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    border-top: 2px solid rgba(225, 225, 225, 0.5);
+   }
+
+   .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 25px 0;
+
+    letter-spacing: 1px;
+   }
+
+   .col span {
+    font-size: 15px;
+   }
+
+   .profile {
+    margin: 80px 0 20px;    
+    text-align: center;
+   }
+
+
+   @media screen and (max-width: 375px) {
+    .card-container {
+      width: 300px;
+    }
+
+    .card-banner {
+      height: 120px;
+    }
+
+    .card-profile {
+      gap: 10px;
+      font-size: 15px;
+    }
+
+    .avatar {
+      top: -40px;
+      width: 80px;
+      height: 80px;
+    }
+
+    .profile {
+      margin-bottom: 15px;
+      margin-top: 60px;
+    }
+
+    .profile h3 {
+      margin-bottom: 2px;
+    }
+    .avatar img{
+      width: 80px;
+      height: 80px;
+    }
+    .col {
+      padding: 15px;
+    }
+
+    .col span {
+      font-size: 14px;
+    }
+   }
+  </style>
+</head>
+<body>
+  <!-- Victor Crest
+  26
+  London
+
+  80K
+  Followers
+
+  803K
+  Likes
+
+  1.4K
+  Photos -->
+  <div class="card">
+   <div class="card-container">
+    <div class="card-banner"></div>
+
+    <div class="card-profile">
+      <div class="avatar">
+        <img src="images/image-victor.jpg" alt="image victor">
+      </div>
+
+      <div class="profile">
+
+        <h3>Victor Crest <span >26</span></h3>
+        <span>London</span>
+      </div>
+
+      <div class="detail">
+        <div class="col">
+          <h3>80K</h3>
+          <span>Followers</span>
+        </div>
+        <div class="col">
+          <h3>803K</h3>
+          <span>Likes</span>
+        </div>
+        <div class="col">
+          <h3>1.4K</h3>
+          <span>Photos</span>
+        </div>
+      </div>
+    </div>
+   </div>
+  </div>
+</body>
+</html>
