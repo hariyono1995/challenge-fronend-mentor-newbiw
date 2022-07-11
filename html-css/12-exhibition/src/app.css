@@ -1,0 +1,15 @@
+.exhibition {
+    width: 900px;
+    min-height: fit-content;
+    /* height: 100%; */
+    margin: 10px;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    
+}
+

@@ -1,0 +1,4 @@
+.navActive {
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 10px;
+}

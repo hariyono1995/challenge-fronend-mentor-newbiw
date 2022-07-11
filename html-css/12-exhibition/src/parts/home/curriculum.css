@@ -1,0 +1,50 @@
+.exhibition__curriculum {
+    height: 300px;
+    margin: 10px 0;
+    background-color: var(--primary-color);
+    padding: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+}
+
+.card__curriculum {
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 30px 10px;
+
+    position: relative;
+
+}
+
+.card__curriculum h3 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card__curriculum p {
+    width: 45%;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+button.cta__curriculum {
+    border: none;
+    outline: none;
+    padding: 5px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+
+    position: absolute !important;
+    bottom: 70px;
+    cursor: pointer;
+}
+
+button.cta__curriculum:hover {
+    opacity: .9;
+}

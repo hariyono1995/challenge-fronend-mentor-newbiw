@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
+
+  <title>Frontend Mentor | Huddle landing page with single introductory section</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root {
+      --violet: hsl(257, 40%, 49%);
+      --softMagenta: hsl(300, 69%, 71%);
+
+      --transition: .3s all ease-in-out;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      color: #ffffff;
+    }
+
+    h1 {
+      font-family: "Poppins", sans-serif;
+      font-size: 37px;
+      font-weight: 700;
+      width: 70%;
+
+    }
+
+    p {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      line-height: 28px;
+
+      opacity: .8;
+
+      margin-bottom: 30px;
+    }
+
+    button {
+      display: inline-block;
+      font-weight: 400;
+      color: var(--violet);
+
+      background-color: #ffffff;
+      padding: 15px 40px;
+      border-radius: 30pc;
+      border: none;
+      outline: none;
+
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 100vw;
+      height: 100vh;
+      padding: 40px;
+      background-image: url("images/bg-desktop.svg");
+      background-size: cover;
+      background-position: center;
+      background-color: var(--violet);
+    }
+
+    .card-container {
+      width: 1440px;
+      height: 720px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card-body {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px;
+
+      padding-top: 40px;
+    }
+
+    .card-body_cta {
+      padding-top: 50px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card-body_cta div {
+      width: 87%;
+
+    }
+
+    footer.account-socials {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: 20px;
+    }
+
+    .account-social {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 10px;
+      border-radius: 50%;
+      outline: 2px solid #ffffff;
+
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .fb {
+      padding: 10px 13px;
+    }
+
+   .account-social:hover {
+    color: var(--softMagenta);
+
+    outline-color: var(--softMagenta);
+    }
+
+    button:hover {
+      color: #ffffff;
+
+      background-color: var(--softMagenta);
+
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+
+    @media screen and (max-width: 700px) {
+      .card, .card-container {
+        height: fit-content;
+        gap: 0;
+      }
+
+      .card {
+        background-image: url("images/bg-mobile.svg");
+      }
+
+      .card-header img{
+        width: 200px;
+        height: 40px;
+      }
+
+      .card-body {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin: 30px 0 70px 0;
+      }
+
+      .card-body_hero-image {
+        margin: auto;
+        width: 100%;
+      }
+      .card-body_hero-image img{
+        width: 100%;
+      } 
+
+      .card-body_cta {
+        width: 100%;
+
+        align-items: center;
+        gap: 10px;
+      }
+
+      .card-body_cta div {
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      h1 {
+        width: 100%;
+        
+        text-align: center;
+        font-size: 27px;
+      }
+
+      p {
+        font-size: 15px;
+        text-align: center;
+        letter-spacing: 1px;
+        line-height: 25px;
+      }
+
+      button {
+        width: 150px;
+        padding: 12px;
+        margin: auto;
+
+        font-size: 14px;
+      }
+
+      footer.account-socials {
+        justify-content: center;
+      }
+
+      .account-social {
+        padding: 7px;
+      }
+
+      .fb {
+        padding: 7px 10px ;
+      }
+
+      .account-social .fa {
+        font-size: 15px;
+      }
+    
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Build The Community Your Fans Will Love
+
+  Huddle re-imagines the way we build communities. You have a voice, but so does your audience. 
+  Create connections with your users as you engage in genuine discussion. 
+
+  Register -->
+
+  <section class="card">
+    <section class="card-container">
+      <header class="card-header">
+        <img src="images/logo.svg" alt="huddle logo">
+      </header>
+
+      <section class="card-body">
+        <div class="card-body_hero-image">
+          <img src="images/illustration-mockups.svg" alt="illustration mockups">
+        </div>
+
+        <div class="card-body_cta">
+          <h1>Build The Community Your Fans Will Love</h1>
+
+          <div>
+            <p>Hunddle re-imagines the way we build communities. You have a voice, but so does your audience. Create
+              connections with your users as you engage in genuine discussion.</p>
+
+            <button>Register</button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="account-socials">
+        <div class="account-social fb">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </div>
+        <div class="account-social">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+        <div class="account-social">
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+
+        </div>
+        </div>
+      </footer>
+    </section>
+  </section>
+
+  <script src="https://use.fontawesome.com/9b3657bbcc.js"></script>
+
+</body>
+
+</html>
