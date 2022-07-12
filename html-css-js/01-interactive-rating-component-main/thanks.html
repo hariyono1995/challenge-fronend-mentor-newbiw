@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Frontend Mentor | Interactive thanks component</title>
+
+        <style>
+        :root {
+         --primaryOrange: hsl(25, 97%, 53%);
+     
+         --neutralWhite: hsl(0, 0%, 100%);
+         --neutralLightGrey:  hsl(217, 12%, 63%);
+         --neutralMediumGrey: hsl(216, 12%, 54%)
+         ;
+         --neutralDarkBlue: hsl(213, 19%, 18%);
+         --neutralVeryDarkBlue: hsl(216, 12%, 8%);
+     
+         --bg-opacity:  rgba(88, 86, 86, 0.3);
+        }
+     
+        * {
+         padding: 0;
+         margin: 0;
+         box-sizing: border-box;
+         list-style-type: none;
+       }
+     
+       body {
+         color: var(--neutralWhite);
+         font-family: 'Overpass', sans-serif;
+         
+         background: var(--neutralVeryDarkBlue);
+     
+       }
+     
+       p {
+         color: var(--neutralMediumGrey);
+       }
+     
+       .card-thank {
+         width: 100vw;
+         height: 100vh;
+     
+         display: flex;
+         justify-content: center;
+         align-items: center;
+       }
+     
+       .thank-container {
+         width: 350px;
+         /* height: fit-content; */
+         min-height: 350px;
+     
+         background: var(--neutralDarkBlue);
+         padding: 30px;
+         border-radius: 20px;
+     
+         display: flex;
+         flex-direction: column;
+         flex-wrap: nowrap;
+         gap: 17px;
+       }
+     
+       
+       .thank-appreciate 
+       ,.thank-image  {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+       }
+
+       .thank-image img {
+        width: 180px;
+       }
+
+       .thank-image p#select-rate {
+        padding: 10px 20px;
+        border-radius: 20px;
+
+        background: var(--bg-opacity);
+
+        font-size: 14px;
+        letter-spacing: 1px;
+        color: var(--primaryOrange);
+       }
+
+       .thank-appreciate {
+        text-align: center;
+        gap: 15px;
+        margin-top: 20px;
+       }
+
+       .thank-appreciate p {
+        font-size: 14px;
+        line-height: 25px;
+       }
+
+       @media screen and (max-width: 375px) {
+         .thank-container {
+           width: 300px;
+           gap: 10px;
+         }
+    
+       }
+       </style>
+    </head>
+    <body>
+        <section class="card-thank">
+            <div id="rating" class="thank-container">
+                <div class="thank-image">
+                    <img src="/images/illustration-thank-you.svg"
+                        alt="illustration thank you">
+
+                    <p id="select-rate"></p>
+                </div>
+
+                <div class="thank-appreciate">
+                    <h3>Thanks you!</h3>
+
+                    <p>We appreciate you taking the time to give a rating. If
+                        you ever need more support,
+                        don’t hesitate to get in touch!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <script src="index.js"></script>
+    </body>
+</html>
